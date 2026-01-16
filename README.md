@@ -5,7 +5,7 @@ This project predicts whether a customer is likely to churn (stop doing business
 ## Project Structure
 
 - `app.py`: Streamlit web application that takes user input and displays churn probability.
-- `train_model.py`: Complete pipeline script that loads data, performs EDA, trains multiple models, and saves the best one.
+- `main.py`: Complete pipeline script that loads data, performs EDA, trains multiple models, and saves the best one.
 - `requirements.txt`: List of Python dependencies required to run the project.
 - `final_churn_model.pkl`: The best-performing trained machine learning model (saved automatically).
 - `cat_options.pkl`: Dictionary of unique values for categorical features (used for dropdowns in the app).
@@ -20,21 +20,13 @@ The model uses the following key features to predict churn:
 - **Logistics:** Distance from Warehouse to Home.
 - **Engagement:** Satisfaction Score, Complain History, Order Count, Coupons Used.
 
-## Getting Started
 
-### Prerequisites
-
-- Python 3.8 or higher
-- VS Code (or similar IDE)
-- Git (for repository setup)
-- A terminal (PowerShell or Command Prompt)
-
-### Setup Instructions
+## Setup Instructions
 
 1. **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/ecommerce-churn-project.git](https://github.com/YOUR_USERNAME/ecommerce-churn-project.git)
-    cd ecommerce-churn-project
+    git clone [https://github.com/Viplav-Bhure/Churn-prediction.git](https://github.com/Viplav-Bhure/Churn-prediction.git)
+    cd Churn-prediction
     ```
 
 2. **Create and activate a virtual environment:**
@@ -56,7 +48,7 @@ The model uses the following key features to predict churn:
    *Note: You must run this script first to generate the model files.*
    *Ensure `churn_data.xlsx` is in the project folder.*
     ```bash
-    python train_model.py
+    python main.py
     ```
 
 5. **Run the Streamlit application:**
@@ -68,12 +60,12 @@ The model uses the following key features to predict churn:
 
 ## Usage
 
-- **Training:** Run `train_model.py` to process the raw data, generate an EDA report (saved as an image), and retrain the models.
+- **Training:** Run `main.py` to process the raw data, generate an EDA report (saved as an image), and retrain the models.
 - **Prediction:** Use the Streamlit web interface to adjust customer parameters (like Tenure, Satisfaction Score, etc.) and click "Predict Churn Risk" to see if the customer is Safe or at High Risk.
 
 ## How It Works
 
-1. **Data Pipeline:** `train_model.py` loads the Excel dataset and cleans column names.
+1. **Data Pipeline:** `main.py` loads the Excel dataset and cleans column names.
 2. **Preprocessing:**
    - Numerical values are imputed with the Median and Scaled.
    - Categorical values are imputed with 'missing' and One-Hot Encoded.
@@ -82,7 +74,7 @@ The model uses the following key features to predict churn:
 
 ## Exploratory Data Analysis (EDA)
 
-The `train_model.py` script automatically performs:
+The `main.py` script automatically performs:
 - **Missing Value Analysis:** Checks and reports null values.
 - **Correlation Mapping:** Generates `eda_correlation_matrix.png` to show relationships between numerical features.
 - **Class Balance:** Checks the percentage of Churn vs. Non-Churn customers.
@@ -94,10 +86,6 @@ The following algorithms are compared during training:
 - Random Forest Classifier
 - Gradient Boosting Classifier
 - XGBoost Classifier (Often selected as the best performer)
-
-## License
-
-This project is open-sourced under the MIT License.
 
 ## Acknowledgements
 
