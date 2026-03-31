@@ -1,6 +1,6 @@
 # E-Commerce Customer Churn Prediction
 
-This project predicts whether a customer is likely to churn (stop doing business) based on their purchasing behavior, demographics, and satisfaction metrics. The dataset is sourced from the Kaggle E-Commerce Customer Churn Analysis and Prediction dataset.
+This project forecasts whether a customer is likely to churn (stop doing business) based on their purchasing behavior, demographics, and satisfaction metrics. The dataset is sourced from the Kaggle E-Commerce Customer Churn Analysis and Prediction dataset.
 
 ## Project Structure
 
@@ -13,12 +13,12 @@ This project predicts whether a customer is likely to churn (stop doing business
 
 ## Features Used
 
-The model employs the following key features to predict churn:
+The model utilizes the following key features to predict churn:
 - **Demographics:** Gender, Marital Status, City Tier.
 - **Account Info:** Tenure, Preferred Login Device, Payment Mode.
 - **Behavior:** Days Since Last Order, Cashback Amount, Hours Spent on App.
 - **Logistics:** Distance from Warehouse to Home.
-- **Engagement:** Satisfaction Score, Complain History, Order Count, Coupons Used.
+- **Engagement:** Satisfaction Score, Complaint History, Order Count, Coupons Used.
 
 
 ## Setup Instructions
@@ -44,24 +44,24 @@ The model employs the following key features to predict churn:
     pip install -r requirements.txt
     ```
 
-4. **Train the model (Starting Run Only):**
-   *Note: You must trigger this script first to generate the model files.*
+4. **Train the model (Initial Run Only):**
+   *Note: You must execute this script first to generate the model files.*
    *Ensure `churn_data.xlsx` is in the project folder.*
     ```bash
     python main.py
     ```
 
-5. **Run the Streamlit application:**
+5. **Launch the Streamlit application:**
     ```bash
     streamlit run app.py
     ```
 
-6. Open the address displayed in the terminal (usually `http://localhost:8501`) in your web browser.
+6. Open the address shown in the terminal (usually `http://localhost:8501`) in your web browser.
 
 ## Usage
 
 - **Training:** Run `main.py` to process the raw data, generate an EDA report (saved as an image), and retrain the models.
-- **Prediction:** Use the Streamlit web interface to tweak customer parameters (like Tenure, Satisfaction Score, etc.) and click "Predict Churn Risk" to see if the customer is Safe or at High Risk.
+- **Prediction:** Use the Streamlit web interface to adjust customer parameters (like Tenure, Satisfaction Score, etc.) and click "Predict Churn Risk" to see if the customer is Safe or at High Risk.
 
 ## How It Works
 
@@ -70,14 +70,14 @@ The model employs the following key features to predict churn:
    - Numerical values are imputed with the Median and Scaled.
    - Categorical values are imputed with 'missing' and One-Hot Encoded.
 3. **Model Selection:** The script trains four different models (Logistic Regression, Random Forest, Gradient Boosting, XGBoost) and automatically saves the one with the superior accuracy.
-4. **Deployment:** `app.py` loads this saved pipeline and uses it to execute inference on live user input.
+4. **Deployment:** `app.py` loads this saved pipeline and uses it to perform inference on live user input.
 
 ## Exploratory Data Analysis (EDA)
 
 The `main.py` script automatically performs:
 - **Missing Value Analysis:** Evaluates and reports null values.
 - **Correlation Mapping:** Creates `eda_correlation_matrix.png` to show relationships between numerical features.
-- **Class Balance:** Examines the percentage of Churn vs. Non-Churn customers.
+- **Class Balance:** Inspects the percentage of Churn vs. Non-Churn customers.
 
 ## Models Trained
 
@@ -85,7 +85,7 @@ The following algorithms are compared during training:
 - Logistic Regression
 - Random Forest Classifier
 - Gradient Boosting Classifier
-- XGBoost Classifier (Often designated as the best performer)
+- XGBoost Classifier (Often identified as the best performer)
 
 ## Acknowledgements
 
